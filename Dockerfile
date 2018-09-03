@@ -39,6 +39,7 @@ RUN	apt-get -y install \
 	unattended-upgrades \
 	apt-transport-https \
 	pwgen \
+	lsb-release \
 	&& apt-get autoclean
 
 RUN echo 'APT::Periodic::Update-Package-Lists "1";' > /etc/apt/apt.conf.d/20auto-upgrades \
