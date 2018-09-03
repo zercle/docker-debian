@@ -21,25 +21,27 @@ RUN apt-get update && apt-get -y install locales tzdata \
 # Add basic package
 RUN	apt-get update && apt-get -y dist-upgrade
 RUN	apt-get -y install \
-	openssl \
-	net-tools \
-	software-properties-common \
-	wget \
-	curl \
-	git \
-	nano \
-	htop \
-	zsh \
-	apt-utils \
-	iputils-ping \
-	traceroute \
-	dnsutils \
-	genisoimage \
-	cron \
-	unattended-upgrades \
 	apt-transport-https \
-	pwgen \
+	apt-utils \
+	cron \
+	curl \
+	dnsutils \
+	htop \
+	iputils-ping \
+	genisoimage \
+	git \
+	gnupg \
 	lsb-release \
+	nano \
+	net-tools \
+	openssl \
+	pwgen \
+	software-properties-common \
+	traceroute \
+	wget \
+	unattended-upgrades \
+	gnupg \
+	zsh \
 	&& apt-get autoclean
 
 RUN echo 'APT::Periodic::Update-Package-Lists "1";' > /etc/apt/apt.conf.d/20auto-upgrades \
