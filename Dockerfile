@@ -12,6 +12,8 @@ ENV	TZ $timezone
 
 # Change locale
 RUN apt-get update && apt-get -y install locales tzdata \
+	&& sed -i "s/#th_TH.UTF-8/th_TH.UTF-8/" /etc/locale.gen \
+	&& sed -i "s/#en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen \
 	&& locale-gen en_US.UTF-8 && locale-gen th_TH.UTF-8 \
 	&& update-locale en_US.UTF-8 \
 	&& echo $timezone > /etc/timezone \
