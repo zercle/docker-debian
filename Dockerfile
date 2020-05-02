@@ -1,4 +1,4 @@
-# Debian 9
+# Debian 10
 FROM	debian:stable-slim
 LABEL	maintainer="Kawin Viriyaprasopsook <bouroo@gmail.com>"
 
