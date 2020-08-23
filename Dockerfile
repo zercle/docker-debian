@@ -23,8 +23,8 @@ RUN	apt-get update && apt-get -y install locales tzdata \
 COPY	./files /
 
 # Add basic package
-RUN	apt-get update && apt-get -y dist-upgrade
-RUN 	apt-get -y install \
+RUN	apt-get update && apt-get -y dist-upgrade \
+	&& apt-get -y install \
 	apt-transport-https \
 	apt-utils \
 	cron \
@@ -45,9 +45,8 @@ RUN 	apt-get -y install \
 	wget \
 	unattended-upgrades \
 	gnupg \
-	&& apt-get autoclean
-
-RUN	echo 'APT::Periodic::Update-Package-Lists "1";' > /etc/apt/apt.conf.d/20auto-upgrades \
+	&& apt-get autoclean \
+	&& echo 'APT::Periodic::Update-Package-Lists "1";' > /etc/apt/apt.conf.d/20auto-upgrades \
 	&& echo 'APT::Periodic::Unattended-Upgrade "1";' >> /etc/apt/apt.conf.d/20auto-upgrades
 
 CMD	["bash"]
