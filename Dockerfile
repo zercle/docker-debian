@@ -1,6 +1,6 @@
-# Debian 10
+# Debian 11
 FROM	debian:stable-slim
-LABEL	maintainer="Kawin Viriyaprasopsook <bouroo@gmail.com>"
+LABEL	maintainer="Kawin Viriyaprasopsook <kawin.vir@zercle.tech>"
 
 ARG	timezone=Asia/Bangkok
 ENV	TERM xterm
