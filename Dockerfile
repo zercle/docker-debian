@@ -1,4 +1,4 @@
-# Debian 11
+# From Debian current stable image
 FROM	debian:stable-slim
 LABEL	maintainer="Kawin Viriyaprasopsook <kawin.vir@zercle.tech>"
 
@@ -30,18 +30,16 @@ RUN	apt-get update && apt-get -y dist-upgrade \
 	cron \
 	curl \
 	dnsutils \
-	htop \
-	iputils-ping \
 	genisoimage \
 	git \
 	gnupg \
 	lsb-release \
+	mtr-tiny \
 	nano \
 	net-tools \
 	openssl \
 	pwgen \
 	software-properties-common \
-	traceroute \
 	wget \
 	unattended-upgrades \
 	gnupg \
