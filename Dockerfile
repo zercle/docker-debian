@@ -3,7 +3,7 @@ FROM	debian:stable-slim
 LABEL	maintainer="Kawin Viriyaprasopsook <kawin.vir@zercle.tech>"
 
 # set environment variables
-ARG DEBIAN_FRONTEND="noninteractive"
+ARG	DEBIAN_FRONTEND="noninteractive"
 ARG	DOCKER_TIMEZONE="Asia/Bangkok"
 
 ENV	TERM="xterm" \
@@ -14,7 +14,7 @@ ENV	TERM="xterm" \
 	TZ="${DOCKER_TIMEZONE}"
 
 # copy sources
-COPY sources.list /etc/apt/
+COPY	sources.list /etc/apt/
 
 # install base packages
 RUN	\
