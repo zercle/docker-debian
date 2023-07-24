@@ -1,6 +1,8 @@
 # docker-debian
 Debian with basic packages base for other docker
 
+[![push docker hub](https://github.com/zercle/docker-debian/actions/workflows/docker-publish.yml/badge.svg?event=schedule)](https://github.com/zercle/docker-debian/actions/workflows/docker-publish.yml)
+
 * `latest` [(Dockerfile)](https://github.com/zercle/docker-debian/blob/master/Dockerfile)
 
 [![dockeri.co](https://dockerico.blankenship.io/image/zercle/docker-debian)](https://hub.docker.com/r/zercle/docker-debian)
