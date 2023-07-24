@@ -36,7 +36,7 @@ RUN	\
 	apt-get -y dist-upgrade && \
 	echo "**** cleanup ****" && \
 	apt-get -y autoremove && \
-	apt-get -y autoclean && \
+	apt-get -y clean && \
 	rm -rf \
 	/tmp/* \
 	/var/lib/apt/lists/* \
