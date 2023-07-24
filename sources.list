@@ -1,8 +1,8 @@
-deb http://deb.debian.org/debian stable main contrib non-free
-deb-src http://deb.debian.org/debian stable main contrib non-free
+deb http://deb.debian.org/debian stable main contrib
+#deb-src http://deb.debian.org/debian stable main contrib
 
-deb http://deb.debian.org/debian stable-updates main contrib non-free
-deb-src http://deb.debian.org/debian stable-updates main contrib non-free
+deb http://deb.debian.org/debian stable-updates main contrib
+#deb-src http://deb.debian.org/debian stable-updates main contrib
 
-deb http://security.debian.org stable-security main contrib non-free
-deb-src http://security.debian.org stable-security main contrib non-free
+deb http://security.debian.org stable-security main contrib
+#deb-src http://security.debian.org stable-security main contrib
