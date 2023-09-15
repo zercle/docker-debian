@@ -31,7 +31,7 @@ RUN set -ex;\
     cp /usr/share/zoneinfo/${DOCKER_TIMEZONE} /etc/localtime && \
     dpkg-reconfigure tzdata && \
     echo "**** install basic packages ****" && \
-    apt-get -y install curl wget jq net-tools nano dnsutils && \
+    apt-get -y install curl wget jq net-tools nano dnsutils ca-certificates gnupg && \
     echo "**** update OS ****" && \
     apt-get -y dist-upgrade && \
     echo "**** cleanup ****" && \
