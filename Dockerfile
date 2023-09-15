@@ -17,22 +17,35 @@ ENV TERM="xterm" \
 COPY sources.list /etc/apt/
 
 # install base packages
-RUN \
+RUN set -x;\
     echo "**** install apt-utils and locales ****" && \
     apt-get update && \
-    apt-get -y install apt-utils locales && \
+    apt-get -y install apt-utils locales tzdata && \
     echo "**** generate locale ****" && \
     sed -i "s/# th_TH.UTF-8/th_TH.UTF-8/" /etc/locale.gen && \
     sed -i "s/# en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen && \
     locale-gen && \
     update-locale en_US.UTF-8 && \
-    echo "**** install packages ****" && \
-    apt-get -y install curl wget jq net-tools nano tzdata dnsutils openssh-server && \
     echo "**** set timezone ****" && \
     echo ${DOCKER_TIMEZONE} > /etc/timezone && \
     cp /usr/share/zoneinfo/${DOCKER_TIMEZONE} /etc/localtime && \
     dpkg-reconfigure tzdata && \
+    echo "**** install basic packages ****" && \
+    apt-get -y install curl wget jq net-tools nano dnsutils && \
     echo "**** update OS ****" && \
+    apt-get -y dist-upgrade && \
+    echo "**** cleanup ****" && \
+    apt-get -y autoremove && \
+    apt-get -y clean && \
+    rm -rf \
+    /tmp/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/*
+
+# update image on each build from this image
+ONBUILD RUN set -x;\
+    echo "**** update OS ****" && \
+    apt-get update && \
     apt-get -y dist-upgrade && \
     echo "**** cleanup ****" && \
     apt-get -y autoremove && \
