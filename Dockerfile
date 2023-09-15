@@ -17,7 +17,7 @@ ENV TERM="xterm" \
 COPY sources.list /etc/apt/
 
 # install base packages
-RUN set -x;\
+RUN set -ex;\
     echo "**** install apt-utils and locales ****" && \
     apt-get update && \
     apt-get -y install apt-utils locales tzdata && \
@@ -43,16 +43,16 @@ RUN set -x;\
     /var/tmp/*
 
 # update image on each build from this image
-ONBUILD RUN set -x;\
-    echo "**** update OS ****" && \
-    apt-get update && \
-    apt-get -y dist-upgrade && \
-    echo "**** cleanup ****" && \
-    apt-get -y autoremove && \
-    apt-get -y clean && \
-    rm -rf \
-    /tmp/* \
-    /var/lib/apt/lists/* \
-    /var/tmp/*
+# ONBUILD RUN set -ex;\
+#     echo "**** update OS ****" && \
+#     apt-get update && \
+#     apt-get -y dist-upgrade && \
+#     echo "**** cleanup ****" && \
+#     apt-get -y autoremove && \
+#     apt-get -y clean && \
+#     rm -rf \
+#     /tmp/* \
+#     /var/lib/apt/lists/* \
+#     /var/tmp/*
 
 CMD ["bash"]
